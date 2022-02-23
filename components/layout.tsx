@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
-import SideBar from './SideBar';
+import SideBar from './common/SideBar';
 
 const name = '[Your Name]';
 export const siteTitle = 'Next.js Sample Website';
@@ -32,7 +32,7 @@ export default function Layout({
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <div className="">
-        <div className=" fixed left-0 top-0 w-16 bottom-0 bg-red-200">
+        <div className=" fixed left-0 top-0 w-16 bottom-0 border-1 border-solid border-black">
           <SideBar />
         </div>
         <main className="pl-16">{children}</main>
