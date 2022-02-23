@@ -4,6 +4,6 @@
 
 @layer utilities {
   .card {
-    @apply bg-white p-4 h-full rounded-xl shadow-md;
+    @apply bg-white p-4 rounded-xl shadow-md;
   }
 }

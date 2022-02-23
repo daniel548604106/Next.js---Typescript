@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -17,14 +13,27 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "baseUrl": "./",
+    "paths": {
+      "@/Apollo/*": ["server/apollo/*"],
+      "@/Axios/*": ["server/axios/*"],
+      "@/Elastic/*": ["server/elastic/*"],
+      "@/Components/*": ["components/*"],
+      "@/Contexts/*": ["contexts/*"],
+      "@/Hooks/*": ["hooks/*"],
+      "@/Interfaces/*": ["interfaces/*"],
+      "@/Modules/*": ["stories/modules/*"],
+      "@/Pages/*": ["pages/*"],
+      "@/Sagas/*": ["redux/sagas/*"],
+      "@/Slices/*": ["redux/slices/*"],
+      "@/Styles/*": ["styles/*"],
+      "@/Utils/*": ["utils/*"],
+      "@/Constants/*": ["constants/*"],
+      "@/Routes/*": ["routes/*"],
+      "@/Mock/*": ["mock/*"]
+    }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

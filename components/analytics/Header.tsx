@@ -186,7 +186,7 @@ const Header = () => {
   return (
     <div className="flex items-center justify-between">
       <div>
-        <h1 className="text-3xl font-bold">Weekley Sumup</h1>
+        <h1 className="text-3xl font-bold">Dashboard</h1>
         <p className="text-xs text-gray-400 mt-1">
           With all of the styling tool options available in today’s market
         </p>

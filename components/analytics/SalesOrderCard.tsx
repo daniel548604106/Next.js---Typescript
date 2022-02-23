@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemTable from './ItemTable';
+import ItemTable from '../common/ItemTable';
 
 const SalesOrderCard = () => {
   return (
