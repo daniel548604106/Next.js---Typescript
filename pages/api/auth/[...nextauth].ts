@@ -5,7 +5,6 @@ import GithubProvider from 'next-auth/providers/github';
 import EmailProvider from 'next-auth/providers/email';
 
 export default NextAuth({
-  secret: process.env.SECRET,
   // Customize Login Page
   pages: {
     signIn: '/auth/signin',
@@ -19,16 +18,16 @@ export default NextAuth({
   providers: [
     // OAuth authentication providers
     GithubProvider({
-      clientId: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET,
+      clientId: process.env.NEXT_PUBLIC_GITHUB_ID,
+      clientSecret: process.env.NEXT_PUBLIC_GITHUB_SECRET,
     }),
     GoogleProvider({
-      clientId: process.env.GOOGLE_ID,
-      clientSecret: process.env.GOOGLE_SECRET,
+      clientId: process.env.NEXT_PUBLIC_GOOGLE_ID,
+      clientSecret: process.env.NEXT_PUBLIC_GOOGLE_SECRET,
     }),
     // Sign in with passwordless email link
     EmailProvider({
-      server: process.env.MAIL_SERVER,
+      server: process.env.NEXT_PUBLIC_MAIL_SERVER,
       from: '<no-reply@example.com>',
     }),
   ],
@@ -46,4 +45,5 @@ export default NextAuth({
       return token;
     },
   },
+  secret: process.env.NEXT_PUBLIC_NEXTAUTH_SECRET,
 });

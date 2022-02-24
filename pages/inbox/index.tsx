@@ -4,7 +4,7 @@ const Inbox = () => {
   const [isTabDrawerOpen, setIsTabDrawerOpen] = useState(true);
 
   return (
-    <div className="flex">
+    <div className="flex absolute inset-0">
       <div
         className={`${
           isTabDrawerOpen ? 'w-64' : 'w-0'
@@ -18,7 +18,7 @@ const Inbox = () => {
             click
           </button>
         </div>
-        <div className="bg-yellow-300 flex-[2] h-screen flex flex-col">
+        <div className="bg-yellow-300 flex-[2]  flex flex-col">
           <div className="bg-white flex items-center p-3">
             <div>
               <h2>Ikola</h2>

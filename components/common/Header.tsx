@@ -30,13 +30,8 @@ const Header = () => {
   );
 
   return (
-    <div className="flex items-center justify-between">
-      <div>
-        <h1 className="text-3xl font-bold">Weekley Sumup</h1>
-        <p className="text-xs text-gray-400 mt-1">
-          With all of the styling tool options available in today’s market
-        </p>
-      </div>
+    <div className="flex h-full px-4 items-center justify-between">
+      <div></div>
       <div className="flex items-center space-x-5">
         <SearchOutlinedIcon className="cursor-pointer" />
         <WavesOutlinedIcon className="cursor-pointer" />

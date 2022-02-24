@@ -8,7 +8,7 @@ import dynamic from 'next/dynamic';
 import { SessionProvider, signIn, useSession } from 'next-auth/react';
 
 import { useState } from 'react';
-import Header from '../components/home/Header';
+import Header from '../components/common/Header';
 import CardWrapper from '@/Components/common/CardWrapper';
 import ItemTable from '@/Components/common/ItemTable';
 import ProgressBar from '@/Components/common/ProgressBar';
@@ -52,8 +52,7 @@ export default function Home({
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <div className="px-10 py-5 h-screen  space-y-10">
-        <Header />
+      <div className="px-10 py-5 space-y-10">
         <button onClick={() => signIn()}>Sign in</button>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div className="flex-1 space-y-10">

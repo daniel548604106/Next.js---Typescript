@@ -17,7 +17,7 @@
     "baseUrl": "./",
     "paths": {
       "@/Apollo/*": ["server/apollo/*"],
-      "@/Axios/*": ["server/axios/*"],
+      "@/Axios/*": ["axios/*"],
       "@/Elastic/*": ["server/elastic/*"],
       "@/Components/*": ["components/*"],
       "@/Contexts/*": ["contexts/*"],
