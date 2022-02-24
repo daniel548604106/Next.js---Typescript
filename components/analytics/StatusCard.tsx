@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactSVGElement, SVGProps } from 'react';
 import ChevronRightOutlinedIcon from '@mui/icons-material/ChevronRightOutlined';
 import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
 import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
@@ -14,7 +14,9 @@ interface StatusCardProps {
   };
 }
 
-const renderIcon = (type) => {
+const renderIcon = (
+  type
+): { bgColor: string; icon: SVGProps<ReactSVGElement> } => {
   switch (type) {
     case 'fulfilled':
       return {
@@ -41,7 +43,10 @@ const renderIcon = (type) => {
       };
       break;
     default:
-      return <div />;
+      return {
+        bgColor: 'black',
+        icon: <div />,
+      };
   }
 };
 

@@ -64,21 +64,9 @@ const BarChart = (props) => {
       },
     },
     scales: {
-      yAxes: [
-        {
-          ticks: {
-            beginAtZero: true,
-            fontColor: 'black',
-          },
-        },
-      ],
-      xAxes: [
-        {
-          ticks: {
-            fontColor: 'black',
-          },
-        },
-      ],
+      y: {
+        beginAtZero: true,
+      },
     },
   };
 

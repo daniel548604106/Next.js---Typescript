@@ -73,7 +73,7 @@ const SideBar = () => {
         ))}
       </ul>
       <ul className="flex flex-col">
-        {bottomTabs.map(({ Icon, href }) => (
+        {bottomTabs.map(({ Icon, href, name }) => (
           <li
             onClick={() => handleBottomIconClick(name, href)}
             className="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-gray-100"
