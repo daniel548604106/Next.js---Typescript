@@ -1,2 +1,9 @@
 const withImages = require('next-images');
-module.exports = withImages();
+
+const nextConfig = {
+  images: {
+    domains: ['avatars.githubusercontent.com'],
+  },
+};
+
+module.exports = withImages(nextConfig);

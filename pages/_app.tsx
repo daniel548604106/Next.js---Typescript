@@ -5,15 +5,13 @@ import Layout from '../components/layout';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { getCookie } from 'cookies-next';
+import Image from 'next/image';
 
 export default function App({
   Component,
   pageProps: { session, ...pageProps },
 }: AppProps) {
   const router = useRouter();
-  const authToken = getCookie('token');
-
-  const isLoggedIn = authToken;
 
   return (
     <SessionProvider session={session}>
@@ -40,5 +38,10 @@ function Auth({ children }) {
 
   // Session is being fetched, or no user.
   // If no user, useEffect() will redirect.
-  return <div>Loading...</div>;
+  return (
+    <div className="flex flex-col h-screen w-screen items-center justify-center">
+      <Image src="/logo.png" alt="logo" width={500} height={500} />
+      <div className="text-2xl font-semibold text-gray-400">Redirecting...</div>
+    </div>
+  );
 }

@@ -8,39 +8,47 @@ interface Provider {
   signinUrl: string;
   callbackUrl: string;
 }
-export default function SignIn({ providers }) {
-  const loginButtonInfo = (provider) => {
-    switch (provider) {
-      case 'github': {
-        return {
-          icon: '',
-          customClass: 'bg-black text-white',
-        };
-        break;
-      }
-      case 'google':
-        {
-          return {
-            icon: '',
-            customClass: 'border-black border-solid border-[1px]',
-          };
-        }
-        break;
-      case 'email': {
+
+const loginButtonInfo = (provider) => {
+  switch (provider) {
+    case 'github': {
+      return {
+        icon: '',
+        customClass: 'bg-black text-white',
+      };
+      break;
+    }
+    case 'google':
+      {
         return {
           icon: '',
           customClass: 'border-black border-solid border-[1px]',
         };
-        break;
       }
-      default: {
-        return {
-          icon: '',
-          customClass: 'bg-black text-white',
-        };
-        break;
-      }
+      break;
+    case 'email': {
+      return {
+        icon: '',
+        customClass: 'border-black border-solid border-[1px]',
+      };
+      break;
     }
+    default: {
+      return {
+        icon: '',
+        customClass: 'bg-black text-white',
+      };
+      break;
+    }
+  }
+};
+export default function SignIn({ providers }) {
+  const handleSignIn = (id) => {
+    const callbackUrl = 'http://localhost:3000';
+    if (id === 'email') {
+      return signIn('email', { email: '', password: '', callbackUrl });
+    }
+    signIn(id, { callbackUrl });
   };
   return (
     <div className="grid grid-cols-2 h-screen">
@@ -57,7 +65,7 @@ export default function SignIn({ providers }) {
                   className={`${
                     loginButtonInfo(provider.id)?.customClass
                   } w-full rounded-lg p-4`}
-                  onClick={() => signIn(provider.id)}
+                  onClick={() => handleSignIn(provider.id)}
                 >
                   Sign in with {provider.name}
                 </button>

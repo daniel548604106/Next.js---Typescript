@@ -1,4 +1,5 @@
 import React from 'react';
+import { signOut } from 'next-auth/react';
 
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -48,15 +49,26 @@ const bottomTabs = [
     name: 'Exit',
     Icon: ExitToAppOutlinedIcon,
     href: '',
+    callback: () => signOut(),
   },
 ];
 
 const SideBar = () => {
   const router = useRouter();
 
-  const handleBottomIconClick = (name: string, href: string) => {
+  const handleBottomIconClick = ({
+    name,
+    href,
+    callback,
+  }: {
+    name: string;
+    href: string;
+    callback: () => void;
+  }) => {
     if (href) {
       return router.push(href);
+    } else {
+      callback();
     }
   };
   return (
@@ -73,10 +85,10 @@ const SideBar = () => {
         ))}
       </ul>
       <ul className="flex flex-col">
-        {bottomTabs.map(({ Icon, href, name }) => (
+        {bottomTabs.map(({ Icon, href, name, callback }) => (
           <li
-            onClick={() => handleBottomIconClick(name, href)}
-            className="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-gray-100"
+            onClick={() => handleBottomIconClick({ name, href, callback })}
+            className="w-10 h-10 cursor-pointer rounded-lg flex items-center justify-center hover:bg-gray-100"
           >
             <Icon className="w-6 h-6 " />
           </li>
